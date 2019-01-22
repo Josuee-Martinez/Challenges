@@ -2,7 +2,7 @@ let form = document.querySelector('.signup-form');
 let emailInput = document.querySelector('#email');
 let passInput = document.querySelector('#password');
 let passReenter = document.querySelector('#password-reenter');
-let submitBtn = document.querySelector('.submit-btn');
+let submitBtn = document.querySelector('#submit-btn');
 
 let executeEvents = () => {
   form.addEventListener('submit', submitForm);
@@ -14,7 +14,8 @@ let submitForm = (e) => {
   } else if(passInput.value !== passReenter.value) {
     fieldAlert('Your Password does not match', 'error');
   } else {
-    fieldAlert('you are signed in', 'succes')
+    fieldAlert('you are signed in', 'succes');
+    submitBtn.style.display = 'none';
   }
   e.preventDefault();
 
@@ -43,5 +44,3 @@ let clearInputs = () => {
 }
 
 executeEvents();
-
-alert('hi');
